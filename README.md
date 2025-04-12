@@ -1,0 +1,3 @@
+# Welcome to my Reddit posts project
+
+In this project I developed an daily scheduled job in Salesforce that syncs the latest posts from [Reddit’s r/aww subreddit](https://www.reddit.com/r/aww/) into a custom object using [Reddit’s JSON API](https://www.reddit.com/r/aww.json). The job ensures only the 40 most recent posts are stored by automatically removing older entries. Here you can see the responsive Lightning Web Component (LWC) I created to display this content, showing key details such as title, author, thumbnail (image), and selftext. The entire solution is covered by Apex tests to ensure reliability and maintainability. 
