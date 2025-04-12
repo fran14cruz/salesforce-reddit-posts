@@ -1,0 +1,11 @@
+<template>
+  <lightning-card title="Latest Reddit Posts">
+    <lightning-datatable
+        key-field="Id"
+        data={posts}
+        columns={columns}
+        hide-checkbox-column
+        show-row-number-column
+    ></lightning-datatable>
+</lightning-card>
+</template>
