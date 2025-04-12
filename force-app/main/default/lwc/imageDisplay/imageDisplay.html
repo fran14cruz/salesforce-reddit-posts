@@ -1,0 +1,10 @@
+<template>
+  <lightning-card title="Reddit Post Image" icon-name="custom:custom63">
+      <template if:true={thumbnailUrl}>
+          <img src={thumbnailUrl} alt="Reddit Image" width="300"/>
+      </template>
+      <template if:true={error}>
+          <div class="slds-text-color_error">Error loading image: {error}</div>
+      </template>
+  </lightning-card>
+</template>
