@@ -4,6 +4,7 @@ import getRedditPosts from '@salesforce/apex/RedditPostService.getRedditPosts';
 const COLUMNS = [
   { label: 'Title', fieldName: 'Title__c' },
   { label: 'Author', fieldName: 'Author__c' },
+  { label: 'Score', fieldName: 'Selftext__c' },
   {
     label: 'Thumbnail',
     fieldName: 'Thumbnail__c',
@@ -13,7 +14,6 @@ const COLUMNS = [
       target: '_blank'
     }
   },
-  { label: 'Text', fieldName: 'Selftext__c' },
   {
     label: 'Created Date',
     fieldName: 'CreatedDate',

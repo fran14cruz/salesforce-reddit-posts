@@ -4,7 +4,7 @@
  * Description: This class retrives...
  * Version 1.0
  */
-public class RedditPostSyncer implements Schedulable {
+public with sharing class RedditPostSyncer implements Schedulable {
 
     public void execute(SchedulableContext sc) {
         // Call the future method to perform the callout
@@ -42,8 +42,8 @@ public class RedditPostSyncer implements Schedulable {
                     rp.Title__c = title.abbreviate(225);
                     rp.Author__c = (String)post.get('author_fullname');
                     rp.Thumbnail__c = (String)post.get('thumbnail');
-                    rp.Selftext__c = (String)post.get('selftext');
-                    rp.CreatedAt__c = DateTime.now();  // Store current date/time
+                    rp.Selftext__c = (String)post.get('score');
+                    rp.CreatedAt__c = DateTime.now(); // Store current date/time
 
                     newPosts.add(rp);
                 }
@@ -67,9 +67,10 @@ public class RedditPostSyncer implements Schedulable {
     public static void deleteOldPosts() {
         try {
             List<Reddit_Post__c> olderPosts = [
-                SELECT Id 
-                FROM Reddit_Post__c 
-                ORDER BY CreatedAt__c DESC 
+                SELECT Id
+                FROM Reddit_Post__c
+                WITH SECURITY_ENFORCED
+                ORDER BY CreatedAt__c DESC
                 OFFSET 40
             ];
             if (!olderPosts.isEmpty()) {
