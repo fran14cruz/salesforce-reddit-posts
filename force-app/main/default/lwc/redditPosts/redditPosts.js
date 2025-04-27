@@ -8,10 +8,10 @@ const COLUMNS = [
   {
     label: 'Thumbnail',
     fieldName: 'Thumbnail__c',
-    type: 'url',
-    target: '_blank',
+    type: 'customImage',
     typeAttributes: {
-      target: '_blank'
+      url: { fieldName: 'Thumbnail__c' },
+      title: { fieldName: 'Title__c' },
     }
   },
   {
