@@ -14,7 +14,8 @@ const COLUMNS = [
     }
 
   },
-  { label: 'Text', fieldName: 'Selftext__c' }
+  { label: 'Text', fieldName: 'Selftext__c' },
+  { label: 'Created Date', fieldName: 'CreatedDate'}
 ];
 
 export default class RedditPosts extends LightningElement {
