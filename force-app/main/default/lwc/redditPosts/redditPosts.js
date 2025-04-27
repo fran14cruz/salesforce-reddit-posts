@@ -5,17 +5,26 @@ const COLUMNS = [
   { label: 'Title', fieldName: 'Title__c' },
   { label: 'Author', fieldName: 'Author__c' },
   {
-      label: 'Thumbnail',
-      fieldName: 'Thumbnail__c',
-      type: 'url',
-      target: "_blank",
-      typeAttributes: {
-        target: '_blank'
+    label: 'Thumbnail',
+    fieldName: 'Thumbnail__c',
+    type: 'url',
+    target: '_blank',
+    typeAttributes: {
+      target: '_blank'
     }
-
   },
   { label: 'Text', fieldName: 'Selftext__c' },
-  { label: 'Created Date', fieldName: 'CreatedDate'}
+  {
+    label: 'Created Date',
+    fieldName: 'CreatedDate',
+    type: 'date',
+    typeAttributes: {
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit'}
+  }
 ];
 
 export default class RedditPosts extends LightningElement {
