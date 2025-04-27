@@ -14,7 +14,7 @@ export default class DisplayRedditImage extends LightningElement {
     wiredRecord({ error, data }) {
         if (data) {
             // Access the Thumbnail__c field
-            this.thumbnailUrl = data.fields.Thumbnail__c.value;console.log('HERE', this.thumbnailUrl);
+            this.thumbnailUrl = data.fields.Thumbnail__c.value;
             this.error = undefined;
         } else if (error) {
             this.error = error;
