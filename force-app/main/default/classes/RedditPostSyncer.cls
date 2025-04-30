@@ -42,7 +42,7 @@ public with sharing class RedditPostSyncer implements Schedulable {
                     rp.Title__c = title.abbreviate(225);
                     rp.Author__c = (String)post.get('author_fullname');
                     rp.Thumbnail__c = (String)post.get('thumbnail');
-                    rp.Selftext__c = (String)post.get('score');
+                    rp.Score__c = (Integer)post.get('score');
                     rp.CreatedAt__c = DateTime.now(); // Store current date/time
 
                     newPosts.add(rp);

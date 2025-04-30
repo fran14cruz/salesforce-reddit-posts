@@ -9,7 +9,7 @@ public class RedditPostSyncerTest {
             post.Title__c = 'Test Post ' + i;
             post.Author__c = 'Test Author ' + i;
             post.Thumbnail__c = 'https://example.com/image' + i + '.jpg';
-            post.Selftext__c = 'Test selftext ' + i;
+            post.Score__c = i;
             post.CreatedAt__c = DateTime.now().addDays(-i);
             testPosts.add(post);
         }

@@ -6,7 +6,7 @@ public with sharing class RedditPostService {
                         Title__c, 
                         Author__c,
                         Thumbnail__c,
-                        Selftext__c,
+                        Score__c,
                         CreatedDate
                     FROM Reddit_Post__c
                     WITH SECURITY_ENFORCED
